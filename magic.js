@@ -2,11 +2,30 @@ var _lastSearchedTerm = "";
 
 $(document).ready(function(){
 	
+        animateSearchAsGoogle();
+        
 	enableSearchPlugin();
 
 	moreResults();
 
 });
+
+function animateSearchAsGoogle() {
+
+    $('#typo').keyup(function(){
+    
+        if( $(this).val().length > 0 ){
+        
+            $('#mainFrame').removeClass('jumbotron').addClass('well')
+            $('#tip-text').hide()
+            $('#mimic').hide()
+            $('#small-mimic').removeClass('hide')
+        
+        }
+        
+    })
+
+}
 
 // sets more results
 function moreResults() {
@@ -23,7 +42,7 @@ function moreResults() {
 // enables search
 function enableSearchPlugin() {
 
-	$('.search-box').keyup(function(e){
+	$('#typo').keyup(function(e){
 
 		// on pressing enter key
 		if( e.keyCode == 13 && e.shiftKey != true ) {
@@ -55,7 +74,7 @@ function findTheDuck( elem ) {
 		jsonCallback: 'jsonp',
 		dataType: 'jsonp',
 		success: function(data){
-
+                        console.log(data)
 			duckTheData(data);
 
 		}
@@ -71,7 +90,7 @@ function duckTheData( data ) {
 
 	if( data.Definition )
 	{
-		$('.define').children('h3').html(data.Heading);
+		$('.define').children('h6').html(data.Heading);
 		$('.define').children('p').html(data.Definition);
 		$('.define').children('div').children('a').html('Source : '+data.DefinitionSource);
 		$('.define').children('div').children('a').attr('src',data.DefinitionURL);
@@ -94,9 +113,6 @@ function duckTheData( data ) {
 // search for data using Social-Mention-API
 function searchForData( elem ) {
 
-	$(elem).attr('disabled','disabled');
-	$('.load-text').removeClass('hide');
-
 	// making the ajax request
 	$.ajax({
 		type: 'GET',
@@ -113,12 +129,6 @@ function searchForData( elem ) {
 		jsonCallback: 'jsonp',
 		dataType: 'jsonp',
 		success: function(data){
-
-			$('.load-text').addClass('hide');
-			$('.more-results').removeClass('hide');
-			$(elem).removeAttr('disabled');
-			$(elem).val('');
-			
 			onResults(data);
 		}
 	});
@@ -136,7 +146,7 @@ function onResults( data ) {
 // inserts a new box
 function insertNewBox( info ) {
 
-	var clone = $('.info-box.hide').clone();
+	var clone = $('.define.hide').clone();
 
 	var title = info.title + (info.title.length > 200 ? '...' : '');
 
