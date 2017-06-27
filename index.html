@@ -1,86 +1,68 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>The Social Web</title>
+    <head>
+        <title>#mockout</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- css -->
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+        <style type="text/css">
+            .mg-auto { margin-left:auto; margin-right:auto; }
+            .favicon { width: 12px; margin: 0px 1px 3px 4px; border: 1px solid #9C9C9C; }
+        </style>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="newmagic.js"></script>
+    </head>
+    <body>
+        <div id="mainFrame" class="jumbotron text-center">
+            <div class="row-fluid">
+                <div class="col-md-6 col-md-offset-3">
+                    <h1 id="mimic">
+                        #<span class="text-success">MOCK</span>OUT
+                    </h1>
+                    <h4 id="small-mimic" class="hide">
+                        #<span class="text-success">MOCK</span>OUT
+                    </h4>
+                    <p id="tip-text">Open Graph Social Search Engine</p>
+                    <div class="form-group has-success has-feedback">
+                        <input id="typo" placeholder="search over #hashtags / @mentions / keywords" class="form-control">
+                        <span id="search-icon" class="glyphicon glyphicon-search form-control-feedback" aria-hidden="true"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
 
-	<!-- css -->
-	<link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
-	<link rel="stylesheet" type="text/css" href="font-awesome.css" />
-	<link rel="stylesheet" type="text/css" href="styles.css" />
-	
-</head>
-<body>
+        </div>
 
-	<div class="col-md-4 col-md-offset-4">
-			<h1 class="text-center title">#SOCIAL</h1>
-			<input type="text" class="form-control search-box" placeholder="#HASHTAGS / @MENTIONS / TOPICS" />
-	</div>
+        <!-- clone starts-->
+        <div id="copy-node" class="hide">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h6 class="title"></h6>
+                </div>
+                <div class="panel-body">
+                    <img class="mg-auto thumbnail info-image" />
+                    <p class="desc"></p>
+                </div>
+                <div class="panel-footer">
+                    <a class="pull-left permalink" target="_blank">
+                        <span class="glyphicon glyphicon-link"></span> Permalink
+                    </a>
+                    <div class="pull-right text-muted source-parent">
+                        via <strong class="source">Facebook</strong>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>  
+        </div>
 
-	<div class="col-md-4 col-md-offset-4 padd-bottom">
+        <!-- clone ends -->
 
-		<div class="duck-data hide">
-			<div class="define">
-				<h3></h3>
-				<p></p>
-				<div>
-					<a href="#" target="_blank"></a>
-				</div>
-			</div>
-			
-			<div class="abs">
-				<p></p>
-				<div>
-					<a href="#" target="_blank"></a>
-				</div>
-			</div>
-		</div>
-
-		<div class="fill-data">
-		</div>
-
-		<!-- clone -->
-		<div class="hide info-box">
-
-			<!-- user info -->
-			<div class="text-user">
-			
-				<!-- user information -->
-				<img src="" class="profile" />
-				<a target="_blank" href="#"></a>
-			</div>
-
-			<!-- title desc -->
-			<div class="text-desc"></div>
-
-			<!-- other elements -->
-			<div class="embedded">
-				<img src="" />
-			</div>
-			
-			<!-- links and favicon attached -->
-			<div class="url">
-				<a target="_blank" href="#">[Website]</a>
-				&nbsp;&bull;&nbsp;
-				<img src="" class="favicon" />
-				
-				<!-- timestamp -->
-				<div class="timestamp pull-right"></div>
-			</div>
-
-		</div>
-
-		<div class="load-text hide text-center">
-				Loading Results...<hr>
-		</div>
-
-		<button class="pull-right more-results hide btn btn-sm btn-default">More Results...</button>
-
-	</div>
-
-	<!-- scripts -->
-	<script type="text/javascript" src="jquery.min.js"></script>
-	<script type="text/javascript" src="http://timeago.yarp.com/jquery.timeago.js"></script>
-	<script type="text/javascript" src="magic.js"></script>
-
-</body>
+        <div class="row-fluid">
+            <div id="fill-data-1" class="col-sm-3"></div>
+            <div id="fill-data-2" class="col-sm-3"></div>
+            <div id="fill-data-3" class="col-sm-3"></div>
+            <div id="fill-data-4" class="col-sm-3"></div>
+        </div>
+    </body>
 </html>
